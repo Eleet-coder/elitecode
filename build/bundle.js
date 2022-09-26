@@ -106,7 +106,7 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
   \************************/
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar App = function () {\n    return ((0, jsx_runtime_1.jsx)(\"div\", { children: \"brobrobrobro 2323 12321312 2323123123123213 1232132 michael lucien\" }));\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://elitecode/./client/App.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar App = function () {\n    return ((0, jsx_runtime_1.jsx)(\"div\", { children: \"brobrobrobro 2323 12321312 2323123123123213 1232132 michael lucien llllll\" }));\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://elitecode/./client/App.tsx?");
 
 /***/ }),
 
