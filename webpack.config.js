@@ -5,8 +5,9 @@ const path = require('path');
 console.log('webpack.config.js process.env.NODE_ENV: ', process.env.NODE_ENV)
 
 module.exports = env => ({
-  mode: process.env.NODE_ENV,
-  entry: './client/index.js',
+  // mode: process.env.NODE_ENV,
+  mode: 'development',
+  entry: './client/index.tsx',
   output: { 
     path: path.resolve(__dirname, './build'), 
     filename: 'bundle.js',
@@ -27,6 +28,12 @@ module.exports = env => ({
           }
         },
         {
+            test: /\.(ts|tsx)$/,
+            exclude: /node_modules/,
+            use: ['ts-loader'],
+          },
+
+        {
             test:/\.s[ac]ss$/i,
             use: ['style-loader', 'css-loader', 'sass-loader' ]
         },
@@ -39,6 +46,9 @@ module.exports = env => ({
           ],
         },
     ]
+  },
+  resolve: {
+    extensions: ['.jsx', '.js', '.ts', '.tsx'],
   },
   devServer: {
     static: {
