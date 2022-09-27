@@ -1,5 +1,6 @@
 import React from 'react'
 import pic1 from '../assets/code1.png'
+import Editor from './Editor'
 import './Feature.css'
 const Feature = () => {
   return (
@@ -14,6 +15,7 @@ const Feature = () => {
    <h1 className='text-light mt-3'>From beginner to master</h1> 
    <p className='fs-3 text-white-50 mt-4'>challenge yourself by practicing problems with catagories and levels.</p>
 </div>
+
 
 </div>
     
