@@ -173,5 +173,6 @@ describe('generateParentheses test', () => {
 INSERT INTO public.problems_tag VALUES (1, 'Easy', 1);
 INSERT INTO public.problems_tag VALUES (2, 'Array', 1);
 
-INSERT INTO public.problems_tag VALUES (3, 'Easy', 2);
+INSERT INTO public.problems_tag VALUES (3, 'Medium', 2);
 INSERT INTO public.problems_tag VALUES (4, 'Array', 2);
+INSERT INTO public.problems_tag VALUES (5, 'Recursion', 2);
