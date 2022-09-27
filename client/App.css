@@ -38,3 +38,19 @@
     background-color: #8a8b8d;
     border: 2px solid #f25131;
 }
+
+#problem-cards{
+  display: grid;
+  color: white;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  margin-bottom: 100px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}

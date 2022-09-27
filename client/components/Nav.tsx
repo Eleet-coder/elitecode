@@ -18,7 +18,7 @@ const Nav = () => {
             <a className="nav-link active  a-hover ms-5 text-white" aria-current="page" href="#">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link  a-hover ms-5 text-white" href="#">Problems</a>
+            <a className="nav-link  a-hover ms-5 text-white" href="#"><Link to="/problems">Problems</Link></a>
           </li>
         </ul>
         <Link to="/login">

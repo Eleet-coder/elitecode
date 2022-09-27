@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap';
 import './App.css'
 import Nav from "./components/Nav";
+import Problems from "./components/Problems";
 import {
     
     Routes,
@@ -16,6 +17,7 @@ return (
         
         <Routes>
         <Route path="/" element={<Nav />} />
+        <Route path="/problems" element={<Problems />} />
         <Route path="/login" element={<Signup />} />
         </Routes>
 
