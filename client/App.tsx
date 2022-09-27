@@ -9,7 +9,9 @@ import {
     Route,
     Link,
   } from "react-router-dom";
+import Login from "./components/Login";
 import Signup from "./components/Signup";
+import Code from "./components/Code";
 
 const App = () => {
 return (
@@ -18,7 +20,9 @@ return (
         <Routes>
         <Route path="/" element={<Nav />} />
         <Route path="/problems" element={<Problems />} />
-        <Route path="/login" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/code" element={<Code />} />
         </Routes>
 
     </div>

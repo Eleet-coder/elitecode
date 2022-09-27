@@ -1,0 +1,13 @@
+.box1{
+    max-width: 600px;
+    max-height: 280px;
+    margin-top: 30px;
+    margin-right: 20px;
+}
+.box2{
+    margin-top: 30px;
+    width: 600px;
+    height: 280px;
+    background-color: #222327;
+
+}
