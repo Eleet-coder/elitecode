@@ -1,8 +1,6 @@
-// const path = require("path");
-// const express = require("express");
-
 import path from 'path'
 import express from "express"
+import { pool } from './models/model';
 
 // var cors = require('cors');
 
