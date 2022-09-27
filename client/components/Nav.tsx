@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Feature from './Feature'
 import TopText from './TopText'
 
 
@@ -15,20 +16,23 @@ const Nav = () => {
       <div className="collapse navbar-collapse " id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link active  a-hover ms-5 text-white" aria-current="page" href="#">Home</a>
+            <a className="nav-link active  a-hover ms-5 text-white" aria-current="page" href="/">Home</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link  a-hover ms-5 text-white" href="#">Problems</a>
+            <a className="nav-link  a-hover ms-5 text-white" href="/problems">Problems</a>
           </li>
         </ul>
-        <Link to="/login">
-        <div className='login ms-lg-auto ms-3'>Log in </div>
+        <div className='ms-lg-auto ms-3'>
+        <Link to="/login" style={{ textDecoration: 'none' }}>
+        <div className='login '>Log in </div>
         </Link>
+        </div>
       </div>
     </div>
     
   </nav>
   <TopText></TopText>
+  <Feature></Feature>
   </div>
   )
 }
