@@ -9,7 +9,9 @@ problemController.getProblems = async (req, res, next) => {
   if (res.locals.userId === "No cookie") {
     loginQuery = `SELECT * FROM public.problems;`;
   } else {
-    loginQuery = `SELECT * FROM public.problems LEFT JOIN public.users_progress ON public.problems._id = public.users_progress.problems_id;`;
+    loginQuery = `SELECT * FROM public.problems 
+    LEFT JOIN public.users_progress ON 
+    public.problems._id = public.users_progress.problems_id;`;
   }
 
   try {
@@ -17,7 +19,7 @@ problemController.getProblems = async (req, res, next) => {
     if (!queryResult.rows) next("Rows does not exist");
     const result: any[] = queryResult.rows;
     if (result.length) {
-      console.log("problems", result);
+    //   console.log("problems", result);
       res.locals.problems = result;
       return next();
     } else {
@@ -38,8 +40,7 @@ problemController.saveProblems = async (req, res, next) => {
   const userID: string = req.cookies.userId;
 
   const saveQuery: string = `INSERT INTO public.users_progress ("users_id", "problems_id", "progress_code")
-    VALUES ( $1, $2, $3)
-    `;
+    VALUES ( $1, $2, $3)`;
 
   const queryOptions: string[] = [userID, problems_id, progress_code];
 
@@ -47,13 +48,7 @@ problemController.saveProblems = async (req, res, next) => {
     const queryResult: any = await pool.query(saveQuery);
     if (!queryResult.rows) next("Rows does not exist");
     const result: any[] = queryResult.rows;
-    // if (result.length === 1) {
-    //   console.log("Save Progress Successful", result);
-    //   res.locals.userId = result[0]._id;
       return next();
-    // } else {
-    //   return next({ message: { err: "no problems" } });
-    // }
   } catch (error) {
     console.log("error caught", error);
     return next(error);

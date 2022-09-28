@@ -1,53 +1,75 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Problems = () => {
-  const [problems, setProblems] = useState([]);
-
-//   useEffect(() => {
-// //     axios
-// //     .get("http://localhost:3000/getProblems")
-// //     .then(function (data) {
-// //       const newProb = [];
-// //       data.forEach((ele) => {
-// //         newProb.push(
-// //           <div className="card-container">
-// //             <div>
-// //               ${ele.problem_name}
-// //               <br />
-// //               <p>
-// //                 <b>Prompt: </b> ${ele.prompt}
-// //               </p>
-// //               <br />
-// //               <button>difficult</button>
-// //               <button>attempt</button>
-// //             </div>
-// //           </div>
-// //         );
-// //         setProblems([ ...newProb ]);
-// //       });
-// //     })
-// //     .catch(function (error) {
-// //       console.log(error);
-// //     });
-// // }, []);
-//       axios
-//       .get("http://localhost:3000/getProblems")
-//       .then(function (data) {
-//         setProblems([...data]);
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//       });
-//   }, []);
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const username = urlParams.get('user')
+  const [problems, setProblems] = useState<any[]>([]);
+  //     axios
+  //     .get("http://localhost:3000/getProblems")
+  //     .then(function (data) {
+  //       const newProb = [];
+  //       data.forEach((ele) => {
+  //         newProb.push(
+  //           <div className="card-container">
+  //             <div>
+  //               ${ele.problem_name}
+  //               <br />
+  //               <p>
+  //                 <b>Prompt: </b> ${ele.prompt}
+  //               </p>
+  //               <br />
+  //               <button>difficult</button>
+  //               <button>attempt</button>
+  //             </div>
+  //           </div>
+  //         );
+  //         setProblems([ ...newProb ]);
+  //       });
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }, []);
+  useEffect(() => {
+      axios
+      .get("http://localhost:3000/getProblems")
+      .then(function (data:any) {
+        console.log('problem data: ', data);
+        let k = 100;
+        let array = data.data.map((problem) => (
+          <div className="card-container" key={k++}>
+            <div className="border border-light p-2 text-center fs-1">
+              {problem.problems_name}
+            <p>
+              {/* <b>Prompt: </b> {problem.prompt} */}
+            </p>
+            <p>
+              difficulty: med
+            </p>
+            <Link to='/code' style={{ textDecoration: 'none' }}>
+              <button className="btn2">attempt</button>
+              </Link>
+            </div>
+          </div>  
+        ))
+        setProblems([...array]);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div>
       <nav className="navbar navbar-expand-md navbar-dark px-3">
         <div className="container-fluid">
-          <a className="navbar-brand   logo" href="#">
+          <a className="navbar-brand   logo" href="/">
             Eleetcoder
-          </a>
+          </a>              
+          
           <button
             className="navbar-toggler"
             type="button"
@@ -105,68 +127,24 @@ const Problems = () => {
             </form>
           </div>
         </div>
+        <div className="text-light fs-1">{username}</div>
       </nav>
 
       <div id="problem-cards">
         <div className="card-container">
-          <div>
-            Problem
+          <div className="border border-light p-2 text-center fs-1">
+            Twosum          
             <br />
-            <p>
-              <b>Prompt: </b> xxxxxxx....
-            </p>
-            <br />
-            <button>difficult</button>
-            <button>attempt</button>
+            <div>difficulty:easy</div>
+            <div className="d-flex justify-content-center">
+            <Link to='/code' style={{ textDecoration: 'none' }}>
+            <button className="btn2 " >attempt</button>
+            </Link>
+            </div>
           </div>
         </div>
-        <div className="card-container">
-          <div>
-            Problem
-            <br />
-            <p>
-              <b>Prompt: </b> xxxxxxx....
-            </p>
-            <br />
-            <button>difficult</button>
-            <button>attempt</button>
-          </div>
-        </div>
-        <div className="card-container">
-          <div>
-            Problem
-            <br />
-            <p>
-              <b>Prompt: </b> xxxxxxx....
-            </p>
-            <br />
-            <button>difficult</button>
-            <button>attempt</button>
-          </div>
-        </div>
-        <div className="card-container">
-          <div>Problem</div>
-          <p>
-            <b>Prompt: </b> xxxxxxx....
-          </p>
-          <p>
-            <div id="">difficult</div>
-            <button>attempt</button>
-            {/* <a href */}
-          </p>
-        </div>
-        {/* {problems.map((problem) => (
-          <div className="card-container">
-            <div>{problem.problem_name}</div>
-            <p>
-              <b>Prompt: </b> {problem.prompt}
-            </p>
-            <p>
-              <button>difficult</button>
-              <button>attempt</button>
-            </p>
-          </div>
-        ))} */}
+        
+        {problems}
       </div>
     </div>
   );

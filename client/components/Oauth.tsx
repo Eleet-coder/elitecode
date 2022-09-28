@@ -16,7 +16,7 @@ const Oauth = () => {
             .then((result) => { 
                 
                 setIsSign(true);
-                window.location.href = "http://localhost:3000/problems?user";
+                window.location.href = "http://localhost:3000/problems?user="+result.user.displayName;
             }).catch((error) => {
                 console.log(error);
             });    
@@ -25,7 +25,7 @@ const Oauth = () => {
         signInWithPopup(auth, providerGithub)
             .then((result) => { 
                 setIsSign(true);
-                window.location.href = "http://localhost:3000/problems";
+                window.location.href = "http://localhost:3000/problems?user="+result.user.displayName;
             }).catch((error) => {
                 console.log(error);
             });

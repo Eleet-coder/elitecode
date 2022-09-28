@@ -43,6 +43,8 @@ ALTER TABLE public.users_progress ADD CONSTRAINT "users_progress_fk1" FOREIGN KE
 
 ALTER TABLE public.problems_tag ADD CONSTRAINT "problems_tag_fk0" FOREIGN KEY ("problems_id") REFERENCES public.problems("_id");
 
+INSERT INTO public.problems VALUES (11, 'reverse-linked-list', 'str', 'str', 'str');
+
 
 INSERT INTO public.users VALUES (1, 'test', 'test');
 
