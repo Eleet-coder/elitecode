@@ -7,7 +7,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 // const axios = require('axios');
 import  axios from "axios";
-
+import Modalbtnsave from './modalbtnsave'
 const Code = () => {
   
   const [js, setJs] = useState("");
@@ -128,8 +128,9 @@ const Code = () => {
           I Want To Surrender
         </button>
         <div className="d-flex saveexportBox">
-          <button className="btn btn-primary btn-lg me-3" onClick ={save}>save</button>
+          <Modalbtnsave solution={js}/>
           <button className="btn btn-success btn-lg" onClick={exportFile}>export</button>
+          
         </div>
       </div>
     </div>
