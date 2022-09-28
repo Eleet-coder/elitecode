@@ -1192,17 +1192,6 @@ eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=w
 
 /***/ }),
 
-/***/ "./client/assets/code1.png":
-/*!*********************************!*\
-  !*** ./client/assets/code1.png ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"7f87a782e77377064237fcfa4337fe96.png\");\n\n//# sourceURL=webpack://elitecode/./client/assets/code1.png?");
-
-/***/ }),
-
 /***/ "./node_modules/react-codemirror2/index.js":
 /*!*************************************************!*\
   !*** ./node_modules/react-codemirror2/index.js ***!
@@ -1540,7 +1529,7 @@ eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = 
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar code1_png_1 = __importDefault(__webpack_require__(/*! ../assets/code1.png */ \"./client/assets/code1.png\"));\n__webpack_require__(/*! ./Feature.css */ \"./client/components/Feature.css\");\nvar Feature = function () {\n    return ((0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: 'd-flex justify-content-center text-center' }, { children: [(0, jsx_runtime_1.jsx)(\"div\", __assign({ className: 'box1 d-lg-flex d-none' }, { children: (0, jsx_runtime_1.jsx)(\"img\", { src: code1_png_1.default, alt: \"pic1\", style: { width: '100%' } }) })), (0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: 'd-flex box2 text-center flex-column' }, { children: [(0, jsx_runtime_1.jsx)(\"h1\", __assign({ className: 'text-light mt-3' }, { children: \"From beginner to master\" })), (0, jsx_runtime_1.jsx)(\"p\", __assign({ className: 'fs-3 text-white-50 mt-4' }, { children: \"challenge yourself by practicing problems with catagories and levels.\" }))] }))] })));\n};\nexports[\"default\"] = Feature;\n\n\n//# sourceURL=webpack://elitecode/./client/components/Feature.tsx?");
+eval("\nvar __assign = (this && this.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar react_1 = __importDefault(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\n__webpack_require__(/*! ./Feature.css */ \"./client/components/Feature.css\");\nvar Feature = function () {\n    return ((0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: 'd-flex justify-content-center text-center' }, { children: [(0, jsx_runtime_1.jsx)(\"div\", { className: 'box1 d-lg-flex d-none' }), (0, jsx_runtime_1.jsxs)(\"div\", __assign({ className: 'd-flex box2 text-center flex-column' }, { children: [(0, jsx_runtime_1.jsx)(\"h1\", __assign({ className: 'text-light mt-3' }, { children: \"From beginner to master\" })), (0, jsx_runtime_1.jsx)(\"p\", __assign({ className: 'fs-3 text-white-50 mt-4' }, { children: \"challenge yourself by practicing problems with catagories and levels.\" }))] }))] })));\n};\nexports[\"default\"] = Feature;\n\n\n//# sourceURL=webpack://elitecode/./client/components/Feature.tsx?");
 
 /***/ }),
 
@@ -1878,26 +1867,6 @@ eval("module.exports = \"data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/20
 /******/ 			if (!module.children) module.children = [];
 /******/ 			return module;
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */

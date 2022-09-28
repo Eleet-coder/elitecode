@@ -1,5 +1,5 @@
 import React from 'react'
-import pic1 from '../assets/code1.png'
+// import pic1 from '../assets/code1.png'
 import Editor from './Editor'
 import './Feature.css'
 const Feature = () => {
@@ -8,7 +8,7 @@ const Feature = () => {
 <div className='d-flex justify-content-center text-center'>
 <div className='box1 d-lg-flex d-none'>
 
-    <img src={pic1} alt="pic1" style={{width:'100%'}} />
+    {/* <img src={pic1} alt="pic1" style={{width:'100%'}} /> */}
 </div>
 <div className='d-flex box2 text-center flex-column'>
 
