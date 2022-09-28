@@ -2,9 +2,11 @@ import path from 'path'
 import express from "express"
 import { pool } from './models/model';
 
+import  userController  from "./userController";
+
 // var cors = require('cors');
 
-const PORT = 3000;
+const PORT = 3001;
 
 const app: any = express();
 
@@ -23,7 +25,9 @@ app.get("/", (req, res) => {
 // username:''
 // password:''
 //}
-app.post("/login", (req, res) => {
+app.post("/login", 
+userController.login,
+(req, res) => {
   console.log('this is user login ',req.body);
 
 });
