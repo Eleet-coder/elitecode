@@ -10,7 +10,16 @@ cookieController.giveCookie = (req, res, next) => {
 }
 
 cookieController.checkCookie = (req, res, next) => {
-    res.locals.userId = req.cookies.userId;
+
+    console.log('checking cookie!');
+    if (req.cookies.userId) {
+        res.locals.userId = req.cookies.userId;
+        console.log('cookie', res.locals.userId);
+        return next();
+    }
+
+    res.locals.userId = 'No cookie';
+    console.log('cookie', res.locals.userId);
     return next();
 }
 

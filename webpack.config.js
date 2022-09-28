@@ -40,14 +40,6 @@ module.exports = (env) => ({
         test: /\.s[ac]ss$/i,
         use: ["style-loader", "css-loader", "sass-loader"],
       },
-      // {
-      //   test: /\.(png|jpe?g|gif)$/i,
-      //   use: [
-      //     {
-      //       loader: "file-loader",
-      //     },
-      //   ],
-      // },
       {
         test: /\.png/,
         type: "asset/resource",
@@ -62,7 +54,9 @@ module.exports = (env) => ({
       // path: require.resolve('path-browserify'),
     },
   },
+
   devServer: {
+    historyApiFallback: true,
     static: {
       publicPath: "/build",
       directory: path.resolve(__dirname, "build"),
@@ -71,7 +65,7 @@ module.exports = (env) => ({
     hot: true,
     port: 8080,
     proxy: {
-      "/search": "http://localhost:3000",
+      "/": "http://localhost:3000",
     },
   },
   performance: {

@@ -1,6 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Problems = () => {
+  const [problems, setProblems] = useState([]);
+
+//   useEffect(() => {
+// //     axios
+// //     .get("http://localhost:3000/getProblems")
+// //     .then(function (data) {
+// //       const newProb = [];
+// //       data.forEach((ele) => {
+// //         newProb.push(
+// //           <div className="card-container">
+// //             <div>
+// //               ${ele.problem_name}
+// //               <br />
+// //               <p>
+// //                 <b>Prompt: </b> ${ele.prompt}
+// //               </p>
+// //               <br />
+// //               <button>difficult</button>
+// //               <button>attempt</button>
+// //             </div>
+// //           </div>
+// //         );
+// //         setProblems([ ...newProb ]);
+// //       });
+// //     })
+// //     .catch(function (error) {
+// //       console.log(error);
+// //     });
+// // }, []);
+//       axios
+//       .get("http://localhost:3000/getProblems")
+//       .then(function (data) {
+//         setProblems([...data]);
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       });
+//   }, []);
+
   return (
     <div>
       <nav className="navbar navbar-expand-md navbar-dark px-3">
@@ -105,48 +145,29 @@ const Problems = () => {
           </div>
         </div>
         <div className="card-container">
-          <div>
-            Problem
-            <br />
+          <div>Problem</div>
+          <p>
+            <b>Prompt: </b> xxxxxxx....
+          </p>
+          <p>
+            <div id="">difficult</div>
+            <button>attempt</button>
+            {/* <a href */}
+          </p>
+        </div>
+        {/* {problems.map((problem) => (
+          <div className="card-container">
+            <div>{problem.problem_name}</div>
             <p>
-              <b>Prompt: </b> xxxxxxx....
+              <b>Prompt: </b> {problem.prompt}
             </p>
-            <br />
-            <button>difficult</button>
-            <button>attempt</button>
+            <p>
+              <button>difficult</button>
+              <button>attempt</button>
+            </p>
           </div>
-        </div>
+        ))} */}
       </div>
-      {/* <div class="container text-center text-white">
-        <div class="row row-cols-2">
-          <div class="col">
-            Problem
-            <br />
-            <p1><b>Prompt: </b> xxxxxxx....</p1>
-            <br/>
-            <button>difficult</button>
-            <button>attempt</button>
-          </div>
-          <div class="col">
-            Problem
-            <br />
-            <button>difficult</button>
-            <button>attempt</button>
-          </div>
-          <div class="col">
-            Problem
-            <br />
-            <button>difficult</button>
-            <button>attempt</button>
-          </div>
-          <div class="col">
-            Problem
-            <br />
-            <button>difficult</button>
-            <button>attempt</button>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

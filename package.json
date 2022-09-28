@@ -6,7 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=production nodemon server/server.ts",
     "build": "webpack --watch --config ./webpack.config.js",
-    "dev": "concurrently \"webpack --watch --config ./webpack.config.js\" \"nodemon server/server.ts\"",
+    "dev": "concurrently \"NODE_ENV=development webpack --watch --config ./webpack.config.js\" \"nodemon server/server.ts\"",
+    "dev8080": "concurrently \"NODE_ENV=development webpack --watch --config ./webpack.config.js\" \"webpack serve\"",
     "test": "jest"
   },
   "repository": {
@@ -20,10 +21,10 @@
   },
   "homepage": "https://github.com/Eleet-coder/elitecode#readme",
   "dependencies": {
-    "@types/cookie-parser": "^1.4.3",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@mui/material": "^5.10.7",
+    "@types/cookie-parser": "^1.4.3",
     "axios": "^0.27.2",
     "bootstrap": "^5.2.1",
     "cookie-parser": "^1.4.6",
@@ -34,7 +35,8 @@
     "react": "^18.2.0",
     "react-codemirror2": "^7.2.1",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.1"
+    "react-router-dom": "^6.4.1",
+    "firebase": "^9.6.9"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",

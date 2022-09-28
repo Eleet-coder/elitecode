@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/build', express.static(path.join(__dirname, '../build')));
 app.use('/client', express.static(path.join(__dirname, '../client')));
 
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "../index.html"));
 });
 
@@ -37,17 +37,15 @@ app.post("/export", (req, res) => {
     tag,solution,problems
   } = req.body;
   fs.mkdirSync(path.join(__dirname,'../../desktop', tag))
-  fs.writeFileSync(path.join(__dirname,'../../desktop', tag,`${problems}.js`),solution)
-  
-  
+  fs.writeFileSync(path.join(__dirname,'../../desktop', tag,`${problems}.js`),solution) 
 })
 
 app.get('/getProblems',  
 
-(req, res) => {
-  console.log('this is user login ',req.body);
-  return res.send({hi:'hi'})
-  // return res.redirect('/problems');
+  (req, res) => {
+    console.log('this is user login ',req.body);
+    return res.send({hi:'hi'})
+    // return res.redirect('/problems');
 });
 
 
@@ -56,6 +54,7 @@ app.get('/getProblems',
 // username:''
 // password:''
 //}
+
 app.post("/login", 
   userController.login,
   cookieController.giveCookie,
@@ -79,9 +78,9 @@ app.post("/signup",
     return res.redirect('/login');
 });
 
-//Authorized routes
 app.get('/problems',
   cookieController.checkCookie,
+  problemController.getProblems,
   (req, res) => {
     return res.sendStatus(201)
     console.log(res);

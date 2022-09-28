@@ -8,6 +8,7 @@ import * as path from 'path';
 // const axios = require('axios');
 import  axios from "axios";
 import Modalbtnsave from './modalbtnsave'
+import Modalbtnexport from './modalbtnexport'
 const Code = () => {
   
   const [js, setJs] = useState("");
@@ -28,40 +29,7 @@ const Code = () => {
     setSurrender(true);
   }
 
-    const save =  () => {
-      alert('123')
-        axios.post('http://localhost:3000/save', {
-         username:'michael',
-         solution:js,
-         problems:'twosum'
-        })
-          .then(function (response) {
-    
-            alert(response.data);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });  
-  }
-  const exportFile = ()=>{
-    
-    axios.post('http://localhost:3000/export', {
-     username:'michael',
-     solution:js,
-     problems:'twosum',
-     tag:'Hashmap'
-    })
-      .then(function (response) {
-
-        alert(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      }); 
- 
-
-
-  }
+  
 
   return (
     <div>
@@ -129,8 +97,7 @@ const Code = () => {
         </button>
         <div className="d-flex saveexportBox">
           <Modalbtnsave solution={js}/>
-          <button className="btn btn-success btn-lg" onClick={exportFile}>export</button>
-          
+          <Modalbtnexport solution={js}/>    
         </div>
       </div>
     </div>
