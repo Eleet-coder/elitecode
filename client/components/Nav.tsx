@@ -5,10 +5,10 @@ import TopText from "./TopText";
 
 const Nav = () => {
   return (
-    <div>
+    <div >
       <nav className="navbar navbar-expand-lg  navbar-dark">
         <div className="container-fluid">
-          <a className="navbar-brand   logo" href="#">
+          <a className="navbar-brand   logo" href="/">
             Eleetcoder
           </a>
           <button
@@ -40,7 +40,7 @@ const Nav = () => {
                 </Link>
               </li>
             </ul>
-            <div className="ms-lg-auto ms-3">
+            <div className="ms-lg-auto ms-3 mt-lg-0 mt-2">
               <Link to="/login" style={{ textDecoration: "none" }}>
                 <div className="login ">Log in </div>
               </Link>

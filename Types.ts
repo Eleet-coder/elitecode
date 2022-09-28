@@ -13,5 +13,6 @@ export type CookieController = {
 export type ProblemController = {
     getProblems: (req: Request, res: Response, next: NextFunction) => any,
     saveProblems: (req: Request, res: Response, next: NextFunction) => any,
+    getProgress: (req: Request, res: Response, next: NextFunction) => any,
 }
 

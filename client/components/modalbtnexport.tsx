@@ -21,25 +21,28 @@ export default function BasicModal(props) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
  setOpen(true);
- axios.post('http://localhost:3000/save', {
-  username:'michael',
-  solution:props.solution,
-  problems:'twosum'
- })
-   .then(function (response) {
-
-   
+ axios.post('http://localhost:3000/export', {
+    username:'michael',
+    solution:props.solution,
+    problems:'twosum',
+    tag:'Hashmap'
    })
-   .catch(function (error) {
-     console.log(error);
-   });  
-  }
+     .then(function (response) {
+
+      
+     })
+     .catch(function (error) {
+       console.log(error);
+     }); 
+    }
+
+
   const handleClose = () => setOpen(false);
 
   return (
     <div>
       
-      <button className="btn btn-primary btn-lg me-3" onClick={handleOpen}>Save</button>
+      <button className="btn btn-success btn-lg me-3" onClick={handleOpen}>Export</button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -49,7 +52,7 @@ export default function BasicModal(props) {
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
-            Save successful
+            Export successful
           </Typography>      
         </Box>
       </Modal>

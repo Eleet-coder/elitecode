@@ -8,6 +8,7 @@ import * as path from 'path';
 // const axios = require('axios');
 import  axios from "axios";
 import Modalbtnsave from './modalbtnsave'
+import Modalbtnexport from './modalbtnexport'
 const Code = () => {
   
   const [js, setJs] = useState("");
@@ -28,61 +29,28 @@ const Code = () => {
     setSurrender(true);
   }
 
-    const save =  () => {
-      alert('123')
-        axios.post('http://localhost:3000/save', {
-         username:'michael',
-         solution:js,
-         problems:'twosum'
-        })
-          .then(function (response) {
-    
-            alert(response.data);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });  
-  }
-  const exportFile = ()=>{
-    
-    axios.post('http://localhost:3000/export', {
-     username:'michael',
-     solution:js,
-     problems:'twosum',
-     tag:'Hashmap'
-    })
-      .then(function (response) {
-
-        alert(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      }); 
- 
-
-
-  }
+  
 
   return (
-    <div>
+    <div className="p-5">
       <nav className="navbar navbar-expand-lg  navbar-dark">
         <div className="container-fluid">
           <Link
             to="/problems"
             style={{ color: "white", textDecoration: "none" }}
           >
-            <button className="btn " id="backBtn">
+            <button className="btn ms-5" id="backBtn">
               Back
             </button>
           </Link>
         </div>
-        <div className="profile text-light text-center">
-          <p className="profile-text ">Michael</p>
-        </div>
+        {/* <div className="profile text-light text-center">
+          <p className="profile-text "></p>
+        </div> */}
       </nav>
       <div className="d-flex ">
         <div
-          className="promptBox me-5  p-2"
+          className="promptBox me-5  p-2 ms-5"
           style={{
             display: surren ? "none" : "block",
           }}
@@ -103,7 +71,7 @@ const Code = () => {
           </span>
         </div>
         <div
-          className="promptBox me-5  p-2"
+          className="promptBox me-5  p-2 ms-5"
           style={{
             display: surren ? "block" : "none",
           }}
@@ -111,16 +79,18 @@ const Code = () => {
           <h1>Solution</h1>
           <p>{solution.twosum}</p>
         </div>
+        
         <Editor
           language="javascript"
           displayName="Javascript"
           value={js}
           onChange={setJs}
         />
+        
       </div>
       <div className="d-flex mt-5">
         <button
-          className="btn btn-danger btn-lg"
+          className="btn btn-danger btn-lg ms-5"
           onClick={() => {
             surrender();
           }}
@@ -129,8 +99,7 @@ const Code = () => {
         </button>
         <div className="d-flex saveexportBox">
           <Modalbtnsave solution={js}/>
-          <button className="btn btn-success btn-lg" onClick={exportFile}>export</button>
-          
+          <Modalbtnexport solution={js}/>    
         </div>
       </div>
     </div>
