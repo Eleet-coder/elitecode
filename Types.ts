@@ -10,3 +10,8 @@ export type CookieController = {
     checkCookie: (req: Request, res: Response, next: NextFunction) => any,
 }
 
+export type ProblemController = {
+    getProblems: (req: Request, res: Response, next: NextFunction) => any,
+    saveProblems: (req: Request, res: Response, next: NextFunction) => any,
+}
+

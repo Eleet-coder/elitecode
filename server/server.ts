@@ -4,9 +4,9 @@ import { pool } from './models/model';
 
 import  userController  from "./userController";
 import  cookieController  from "./cookieController";
+import  problemController  from "./problemController";
 
 // var cors = require('cors');
-// const cookieParser = require('cookie-parser');
 import cookieParser from "cookie-parser";
 
 const PORT = 3001;
