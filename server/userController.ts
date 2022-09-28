@@ -1,6 +1,6 @@
 import { UserController } from "../Types"
 
-let userController : Partial<UserController> = {}
+let userController : UserController = {} as UserController
 
 userController.signup = (req, res, next) => {
 
