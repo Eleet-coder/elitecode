@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction, RequestHandler } from 'express';
-import userController from '/Users/lennysutrisno/Documents/GitHub/elitecode/server/userController';
+import userController from '../server/userController';
 import "@testing-library/jest-dom/extend-expect";
 
 

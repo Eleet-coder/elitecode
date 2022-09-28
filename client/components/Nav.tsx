@@ -33,9 +33,10 @@ const Nav = () => {
                   Home
                 </a>
               </li>
-              <li className="nav-item">
-                <Link to="/problems" style={{ textDecoration: "none" }}>
-                  <div>Problems</div>
+              <li className="nav-item ms-5 mt-2">
+         
+                <Link to="/problems" style={{ color:'white',textDecoration: "none" }}>
+                  <div >Problems</div>
                 </Link>
               </li>
             </ul>

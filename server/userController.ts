@@ -12,4 +12,4 @@ userController.login = (req, res, next) => {
     return next()
 }
 
-export default userController
+export default userController;

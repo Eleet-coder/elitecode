@@ -11,12 +11,8 @@ const app: any = express();
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-
-// app.use(cors());
-// app.use(express.static("build"));
-// app.use(express.static("/assets"))
-
 app.use('/build', express.static(path.join(__dirname, '../build')));
+app.use('/client', express.static(path.join(__dirname, '../client')));
 
 app.get("/", (req, res) => {
   res.status(200).sendFile(path.join(__dirname, "../index.html"));
