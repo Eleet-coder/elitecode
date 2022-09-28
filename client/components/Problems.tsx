@@ -72,9 +72,9 @@ const Problems = () => {
           <div>
             Problem
             <br />
-            <p1>
+            <p>
               <b>Prompt: </b> xxxxxxx....
-            </p1>
+            </p>
             <br />
             <button>difficult</button>
             <button>attempt</button>
@@ -84,9 +84,9 @@ const Problems = () => {
           <div>
             Problem
             <br />
-            <p1>
+            <p>
               <b>Prompt: </b> xxxxxxx....
-            </p1>
+            </p>
             <br />
             <button>difficult</button>
             <button>attempt</button>
@@ -96,9 +96,9 @@ const Problems = () => {
           <div>
             Problem
             <br />
-            <p1>
+            <p>
               <b>Prompt: </b> xxxxxxx....
-            </p1>
+            </p>
             <br />
             <button>difficult</button>
             <button>attempt</button>
@@ -108,9 +108,9 @@ const Problems = () => {
           <div>
             Problem
             <br />
-            <p1>
+            <p>
               <b>Prompt: </b> xxxxxxx....
-            </p1>
+            </p>
             <br />
             <button>difficult</button>
             <button>attempt</button>
