@@ -1,11 +1,12 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const { node } = require("webpack");
 
 // console.log('webpack.config.js process.env: ', process.env)
-console.log("webpack.config.js process.env.NODE_ENV: ", process.env.NODE_ENV);
 
 module.exports = (env) => ({
   // mode: process.env.NODE_ENV,
+
   mode: "development",
   entry: "./client/index.tsx",
   output: {
@@ -26,7 +27,7 @@ module.exports = (env) => ({
       },
       {
         test: /\.(ts|tsx)$/,
-        exclude: /node_modules/,
+
         use: ["ts-loader"],
       },
 
@@ -49,12 +50,17 @@ module.exports = (env) => ({
       // },
       {
         test: /\.png/,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
     ],
   },
   resolve: {
     extensions: [".jsx", ".js", ".ts", ".tsx"],
+    fallback: {
+      fs: false,
+      path: false,
+      // path: require.resolve('path-browserify'),
+    },
   },
   devServer: {
     static: {
