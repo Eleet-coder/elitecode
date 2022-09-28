@@ -2,7 +2,14 @@ import React, { useState } from "react";
 import Editor from "./Editor";
 import "./Code.css";
 import { Link } from "react-router-dom";
+// const fs =require('fs')
+import * as fs from 'fs';
+import * as path from 'path';
+// const axios = require('axios');
+import  axios from "axios";
+
 const Code = () => {
+  
   const [js, setJs] = useState("");
   const [surren, setSurrender] = useState(false);
   const solution = {
@@ -20,6 +27,42 @@ const Code = () => {
   function surrender() {
     setSurrender(true);
   }
+
+    const save =  () => {
+      alert('123')
+        axios.post('http://localhost:3000/save', {
+         username:'michael',
+         solution:js,
+         problems:'twosum'
+        })
+          .then(function (response) {
+    
+            alert(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });  
+  }
+  const exportFile = ()=>{
+    
+    axios.post('http://localhost:3000/export', {
+     username:'michael',
+     solution:js,
+     problems:'twosum',
+     tag:'Hashmap'
+    })
+      .then(function (response) {
+
+        alert(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+ 
+
+
+  }
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg  navbar-dark">
@@ -85,8 +128,8 @@ const Code = () => {
           I Want To Surrender
         </button>
         <div className="d-flex saveexportBox">
-          <button className="btn btn-primary btn-lg me-3">save</button>
-          <button className="btn btn-success btn-lg">export</button>
+          <button className="btn btn-primary btn-lg me-3" onClick ={save}>save</button>
+          <button className="btn btn-success btn-lg" onClick={exportFile}>export</button>
         </div>
       </div>
     </div>
