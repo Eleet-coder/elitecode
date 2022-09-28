@@ -1,0 +1,22 @@
+.loginBox{
+    width: 425px;
+    height: 667px;
+    
+
+}
+
+#loginBtn{
+    background-color: #a73019;
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+#loginBtn:hover{
+    background-color: #f14b2a;
+}
+
+#signBtn{
+    color: white;
+    font-family: sans-serif;
+    font-size: 16px; 
+}
